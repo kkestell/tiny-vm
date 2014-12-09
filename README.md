@@ -87,7 +87,7 @@ Assuming the assembly source above...
 
 ### Assemble, generate bytecode
 
-    $ python tas.py test.asm test.tvm
+    $ python tas.py examples/test.asm examples/test.tvm
     0201000000000000 li $1 0x00000000
     020200000000ffff li $2 0x0000FFFF
     0203000000000003 li $3 loop
@@ -98,7 +98,7 @@ Assuming the assembly source above...
 
 ### Inspect bytecode
 
-    $ od -x test.tvm
+    $ od -x examples/test.tvm
     0000000          00000000        02010000        0000ffff        02020000
     0000020          00000003        02030000        00000000        04010100
     0000040          00000000        0d010000        00000000        0c010203
@@ -113,7 +113,7 @@ Assuming the assembly source above...
 
 Each cycle, TinyVM prints the value of the program counter, the next instruction, executes that instruction, and then prints the values of the registers, with each line representing a single CPU cycle.
 
-    $ ./tinyvm test.tvm
+    $ ./tinyvm examples/test.tvm
     00000001 02000000ffffffff ffffffff 00000000 00000000 00000000
     00000002 0201000012345678 ffffffff 12345678 00000000 00000000
     00000003 0202000000012ac0 ffffffff 12345678 00012ac0 00000000
